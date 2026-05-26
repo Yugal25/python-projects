@@ -1,25 +1,32 @@
 tasks = []
 
 def show_tasks():
-    if not tasks:
-        print("No tasks yet!")
+    if len(tasks) == 0:       # if not tasks:
+        print("No tasks yet")
     else:
-        for i, task in enumerate(tasks, 1):
-            print(f"{i}. {task}")
+        print('\n The tasks list is as follows: \n')
+        i = 1
+        for task in tasks:
+            print(i, task )
+            i += 1
+
 
 while True:
-    print("\n1. Add Task\n2. Show Tasks\n3. Exit")
-    choice = input("Enter choice: ")
+    print("\n 1. Add Task \n2. Show Tasks \n3. Exit")
 
-    if choice == "1":
-        task = input("Enter new task: ")
-        tasks.append(task)
-        print("Task added!")
-    elif choice == "2":
+    choice = input("Enter your choice: ")
+
+    if choice =="1":
+        tasks.append(input("Enter new task: "))
+        print("Task added succesfully.")
+
+    elif choice =="2":
         show_tasks()
-    elif choice == "3":
-        print("Goodbye!")
+
+    elif choice =="3":
+        print("You chose to exit...")
         break
+
     else:
         print("Invalid choice")
-1
+
